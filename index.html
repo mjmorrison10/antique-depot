@@ -3,407 +3,569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antique Depot | Largest Antique Mall in Orange, CA</title>
-    <meta name="description" content="Antique Depot on Glassell St in Orange, CA. The largest antique mall with dozens of vendors. Mid-century, primitive, vintage clothing, books, rugs and more. 10% OFF for seniors every Tuesday. Call (714) 516-1731.">
-    <meta name="keywords" content="antique mall Orange CA, multi-vendor antique shop, vintage clothing, mid-century modern, Antique Depot Orange">
+    <title>Antique Depot | The Largest Antique Mall in Orange, CA | 50+ Dealers, Endless Treasures</title>
+    <meta name="description" content="Antique Depot — Orange's largest antique mall with 50+ independent dealers. Mid-century, primitive, vintage clothing, books, rugs, architectural salvage & more. Senior Tuesday 10% OFF. Open daily 10AM-6PM. Call (714) 516-1731.">
+    <meta name="keywords" content="antique mall Orange CA, multi-vendor antique shop, vintage clothing Orange, mid-century modern, Antique Depot, largest antique mall Orange County, Glassell Street antiques">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2378350f'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='14' fill='%23ea580c'%3EAD%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Antique Depot — The Largest Antique Mall in Orange | 50+ Dealers">
+    <meta property="og:description" content="50+ independent vendors under one massive roof. Mid-century, primitive, vintage clothing, books, rugs & more. Senior Tuesday 10% OFF. Open daily.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antiquedepotorange.com">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Antique Depot">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Antique Depot",
+        "description": "The largest antique mall in Orange, CA with 50+ independent dealers. Mid-century modern, primitive farmhouse, vintage clothing, antique books, oriental rugs & more.",
+        "telephone": "+1-714-516-1731",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 S Glassell St",
+            "addressLocality": "Orange",
+            "addressRegion": "CA",
+            "postalCode": "92866",
+            "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                "opens": "10:00",
+                "closes": "18:00"
+            }
+        ],
+        "priceRange": "$$",
+        "image": "",
+        "sameAs": []
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="top-bar-left">
-                <span class="top-bar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    <a href="tel:7145161731">(714) 516-1731</a>
-                </span>
-                <span class="top-bar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    155 S Glassell St, Orange, CA
-                </span>
-            </div>
-            <div class="top-bar-right">
-                <span class="top-bar-item">Open Daily: 10AM-6PM</span>
-            </div>
-        </div>
-    </div>
-
+    <!-- ===================== NAVIGATION ===================== -->
     <nav class="navbar" id="navbar">
         <div class="container nav-inner">
-            <a href="#" class="logo">
-                <span class="logo-icon">AD</span>
+            <a href="#" class="logo" aria-label="Antique Depot Home">
+                <div class="logo-mark">AD</div>
                 <div class="logo-text">
-                    <span class="logo-name">Antique Depot</span>
-                    <span class="logo-tagline">Dozens of Vendors. Endless Finds.</span>
+                    <span class="logo-name">ANTIQUE DEPOT</span>
+                    <span class="logo-sub">50+ DEALERS &bull; ENDLESS TREASURES</span>
                 </div>
             </a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#vendors">Vendors</a></li>
+                <li><a href="#new-arrivals">New Arrivals</a></li>
+                <li><a href="#hunt-guide">Treasure Hunt</a></li>
+                <li><a href="#collectors">Collector's Corner</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Visit Us</a></li>
+            </ul>
+            <div class="nav-status">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Checking...</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#collections" data-section="collections">Our Collections</a></li>
-                <li><a href="#why-us" data-section="why-us">Why Us</a></li>
-                <li><a href="#reviews" data-section="reviews">Reviews</a></li>
-                <li><a href="#about" data-section="about">About</a></li>
-                <li><a href="#contact" class="nav-cta" data-section="contact">Visit Us</a></li>
-            </ul>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#vendors">Vendors</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#hunt-guide">Treasure Hunt</a>
+        <a href="#collectors">Collector's Corner</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="mobile-menu-cta">Visit Us &mdash; (714) 516-1731</a>
+    </div>
+
+    <!-- ===================== 1. WAREHOUSE HERO ===================== -->
     <section class="hero" id="hero">
+        <div class="hero-gate">
+            <div class="gate-lines"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <div class="hero-particles" id="heroParticles"></div>
-            <div class="hero-badge">Orange's Largest Antique Mall</div>
-            <h1>Dozens of Vendors.<br><span class="highlight">Endless Treasures.</span></h1>
-            <p class="hero-sub">Antique Depot is Orange's largest antique mall, featuring dozens of independent vendors under one roof. From mid-century modern to primitive farmhouse, our massive selection means you will always find something you love. New arrivals daily.</p>
-            <div class="hero-ctas">
-                <a href="tel:7145161731" class="btn btn-primary btn-lg btn-pulse">
+            <div class="hero-tag reveal">
+                <span class="hero-tag-dot"></span>
+                THE LARGEST ANTIQUE MALL IN ORANGE
+            </div>
+            <h1 class="reveal stagger-1">
+                <span class="accent">50+ Dealers.</span><br>Endless Treasures.
+            </h1>
+            <p class="hero-sub reveal stagger-2">
+                Antique Depot isn't a shop — it's a warehouse of wonder. Fifty independent vendors, each with their own specialty and obsession, all under one massive roof. Room after room of mid-century furniture, primitive farmhouse, vintage clothing, rare books, and architectural salvage. Every visit is a new hunt. Every corner holds something unexpected.
+            </p>
+            <div class="hero-actions reveal stagger-3">
+                <a href="tel:7145161731" class="btn btn-primary btn-lg">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                     Call (714) 516-1731
                 </a>
-                <a href="#contact" class="btn btn-secondary btn-lg btn-pulse">Visit Us Today</a>
+                <a href="#contact" class="btn btn-outline btn-lg">Get Directions</a>
             </div>
-            <div class="hero-trust">
-                <div class="trust-item">
-                    <div class="trust-score">4.5</div>
-                    <div class="trust-label">Yelp Rating<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div>
+            <div class="hero-stats reveal stagger-4">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">50+</div>
+                    <div class="hero-stat-label">Independent Vendors</div>
                 </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score" data-count="30">30+</div>
-                    <div class="trust-label">Independent<br>Vendors</div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">5,000+</div>
+                    <div class="hero-stat-label">Items In Stock</div>
                 </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">Daily</div>
-                    <div class="trust-label">New<br>Arrivals</div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">DAILY</div>
+                    <div class="hero-stat-label">New Arrivals</div>
                 </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">Largest</div>
-                    <div class="trust-label">Antique Mall<br>In Orange</div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">#1</div>
+                    <div class="hero-stat-label">Largest in Orange</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="urgency-banner" id="urgency-banner">
-        <div class="container">
-            <div class="urgency-content">
-                <div class="urgency-text">
-                    <span class="urgency-label">SENIOR DISCOUNT EVERY TUESDAY</span>
-                    <strong>10% OFF</strong> for seniors every Tuesday. Plus, bring this website for additional savings on your visit!
-                </div>
-                <a href="tel:7145161731" class="btn btn-white">Call to Learn More</a>
             </div>
         </div>
     </section>
 
-    <section class="services" id="collections">
+    <!-- ===================== 2. SENIOR TUESDAY STRIP ===================== -->
+    <section class="senior-strip" id="senior-strip">
+        <div class="container senior-strip-inner">
+            <span class="senior-label">SENIOR TUESDAY</span>
+            <span class="senior-text"><strong>10% OFF</strong> every Tuesday for our senior shoppers &mdash; our way of saying thank you for making Antique Depot part of your week</span>
+            <a href="tel:7145161731" class="senior-cta">Call to Learn More</a>
+        </div>
+    </section>
+
+    <!-- ===================== 3. VENDOR DIRECTORY ===================== -->
+    <section class="vendors-section" id="vendors">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What You'll Find</span>
-                <h2>A World of Antiques Under<br>One Massive Roof</h2>
-                <p>With dozens of vendors, our selection is unmatched. Every vendor brings their own specialty and style, creating a treasure-hunting experience unlike any other antique shop in Orange County.</p>
+            <span class="section-tag reveal">Vendor Directory</span>
+            <h2 class="section-heading reveal stagger-1">50+ Vendors. One Massive Roof.</h2>
+            <p class="section-sub reveal stagger-2">Why visit one antique shop when you can visit fifty at once? Each vendor brings their own expertise, aesthetic, and obsession. Browse by category and plan your hunt.</p>
+
+            <div class="vendor-filters reveal stagger-3">
+                <button class="filter-btn active" data-filter="all">All Vendors</button>
+                <button class="filter-btn" data-filter="furniture">Furniture</button>
+                <button class="filter-btn" data-filter="clothing">Clothing & Jewelry</button>
+                <button class="filter-btn" data-filter="books">Books & Paper</button>
+                <button class="filter-btn" data-filter="decor">Home Decor</button>
+                <button class="filter-btn" data-filter="salvage">Salvage & Industrial</button>
+                <button class="filter-btn" data-filter="collectibles">Collectibles</button>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    </div>
-                    <h3>Multi-Vendor Antique Mall</h3>
-                    <p>Dozens of independent vendors in one location. Each vendor curates their own space with unique finds. Explore room after room of treasures from different eras and styles.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 18h12M6 6V4h12v2"/></svg>
+
+            <div class="vendors-grid">
+                <div class="vendor-card reveal" data-category="furniture">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 18h12M6 6V4h12v2"/></svg>
                     </div>
                     <h3>Mid-Century Modern</h3>
-                    <p>Sleek lines, organic forms, and iconic design. Our vendors offer an impressive selection of mid-century furniture, lighting, and decor that defines cool sophistication.</p>
+                    <span class="vendor-tag">Furniture</span>
+                    <p>Sleek lines, organic forms, and iconic design. Teak dressers, Eames chairs, sculptural coffee tables, and statement lighting that defined an era.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+                <div class="vendor-card reveal" data-category="decor">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
                     </div>
                     <h3>Primitive & Farmhouse</h3>
-                    <p>Rustic charm meets timeless character. Weathered wood, galvanized metal, and homespun textiles. Perfect for creating that warm, lived-in farmhouse aesthetic.</p>
+                    <span class="vendor-tag">Home Decor</span>
+                    <p>Weathered wood, galvanized metal, homespun textiles. Rustic charm meets timeless character for that warm, lived-in aesthetic.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.88v14.4a1.27 1.27 0 001.52 1.22L8 20l4 1.46L16 20l4.38 1.46a1.27 1.27 0 001.52-1.22V5.34a2 2 0 00-1.52-1.88z"/></svg>
+                <div class="vendor-card reveal" data-category="clothing">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.88v14.4a1.27 1.27 0 001.52 1.22L8 20l4 1.46L16 20l4.38 1.46a1.27 1.27 0 001.52-1.22V5.34a2 2 0 00-1.52-1.88z"/></svg>
                     </div>
                     <h3>Vintage Clothing & Jewelry</h3>
-                    <p>Fashion from decades past at amazing prices. Designer pieces, everyday wear, and stunning costume jewelry. Our clothing vendors handpick every item for style and quality.</p>
+                    <span class="vendor-tag">Clothing & Jewelry</span>
+                    <p>Designer pieces, everyday wear, and stunning costume jewelry spanning decades. Multiple vendors means multiple price points for every budget.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                <div class="vendor-card reveal" data-category="books">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
                     </div>
                     <h3>Antique Books & Maps</h3>
-                    <p>First editions, rare volumes, vintage maps, and historical documents. Bibliophiles and history buffs will find treasures they never expected. Knowledge is beautiful.</p>
+                    <span class="vendor-tag">Books & Paper</span>
+                    <p>First editions, rare volumes, vintage maps, and historical documents. Bibliophiles and history buffs will find treasures they never expected.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                <div class="vendor-card reveal" data-category="collectibles">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                     </div>
                     <h3>Retro Electronics</h3>
-                    <p>Vintage radios, turntables, cameras, and more. Many items still functional and all are collectible. The perfect blend of technology nostalgia and industrial design.</p>
+                    <span class="vendor-tag">Collectibles</span>
+                    <p>Vintage radios, turntables, cameras, and more. Many still functional, all collectible. The perfect blend of technology nostalgia and industrial design.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9h1M9 13h1M9 17h1"/></svg>
+                <div class="vendor-card reveal" data-category="salvage">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9h1M9 13h1M9 17h1"/></svg>
                     </div>
                     <h3>Architectural Salvage</h3>
-                    <p>Vintage doors, stained glass, ironwork, hardware, and building materials. Perfect for restoration projects or adding character to new construction. History you can build with.</p>
+                    <span class="vendor-tag">Salvage & Industrial</span>
+                    <p>Vintage doors, stained glass, ironwork, hardware, and building materials. Perfect for restoration projects or adding character to new construction.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                <div class="vendor-card reveal" data-category="decor">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
                     </div>
                     <h3>Oriental Rugs & Textiles</h3>
-                    <p>Handwoven rugs, tapestries, and textiles from around the world. Persian, Turkish, and Central Asian pieces with rich colors and intricate patterns. True works of art for your floor.</p>
+                    <span class="vendor-tag">Home Decor</span>
+                    <p>Handwoven rugs, tapestries, and textiles from around the world. Persian, Turkish, and Central Asian pieces with rich colors and intricate patterns.</p>
+                </div>
+                <div class="vendor-card reveal" data-category="collectibles">
+                    <div class="vendor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h3>Global Curiosities</h3>
+                    <span class="vendor-tag">Collectibles</span>
+                    <p>Artifacts and curiosities from around the globe. Tribal art, Asian ceramics, African textiles, and exotic pieces that tell stories of distant cultures.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="why-us" id="why-us">
+    <!-- ===================== 4. NEW ARRIVALS SPOTLIGHT ===================== -->
+    <section class="arrivals-section" id="new-arrivals">
         <div class="container">
-            <div class="why-us-grid">
-                <div class="why-us-content">
-                    <span class="section-tag">Why Antique Depot?</span>
-                    <h2>The Largest Selection. The Most Vendors. The Best Finds.</h2>
-                    <p>Why visit one antique shop when you can visit dozens at once? Antique Depot brings together independent vendors with diverse specialties under one roof. That means more variety, more styles, and more chances to find exactly what you are looking for. It is treasure hunting at its finest.</p>
-                    <div class="why-features">
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Largest Selection in Orange</strong>
-                                <p>With dozens of vendors, our inventory is unmatched. More items, more styles, more eras. You could spend hours here and still discover something new.</p>
-                            </div>
+            <span class="section-tag reveal">Just Landed</span>
+            <h2 class="section-heading reveal stagger-1">New Arrivals Spotlight</h2>
+            <p class="section-sub reveal stagger-2">Our vendors restock constantly. Here's what just hit the floor. The early bird gets the treasure — these pieces won't last long.</p>
+
+            <div class="arrivals-grid">
+                <div class="arrival-card arrival-featured reveal">
+                    <div class="arrival-badge">Just In</div>
+                    <div class="arrival-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 18h12M6 6V4h12v2"/></svg>
+                    </div>
+                    <h3>1960s Danish Teak Credenza</h3>
+                    <p class="arrival-vendor">Vendor: Mid-Century Modern</p>
+                    <p>Pristine condition with original hardware. Six feet of sculptural storage that would cost triple at a boutique. Arrived this morning.</p>
+                    <span class="arrival-price">Priced to sell</span>
+                </div>
+                <div class="arrival-card reveal">
+                    <div class="arrival-badge">Rare Find</div>
+                    <div class="arrival-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    </div>
+                    <h3>First Edition Hemingway</h3>
+                    <p class="arrival-vendor">Vendor: Antique Books</p>
+                    <p>A Farewell to Arms, first printing with original dust jacket. The kind of find that makes book collectors lose their minds.</p>
+                    <span class="arrival-price">One of one</span>
+                </div>
+                <div class="arrival-card reveal">
+                    <div class="arrival-badge">Fresh Stock</div>
+                    <div class="arrival-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.88v14.4a1.27 1.27 0 001.52 1.22L8 20l4 1.46L16 20l4.38 1.46a1.27 1.27 0 001.52-1.22V5.34a2 2 0 00-1.52-1.88z"/></svg>
+                    </div>
+                    <h3>1940s Navy Pea Coat</h3>
+                    <p class="arrival-vendor">Vendor: Vintage Clothing</p>
+                    <p>Authentic military-issue wool peacoat with original buttons. Fits like it was made yesterday. These don't come around often.</p>
+                    <span class="arrival-price">Under $100</span>
+                </div>
+                <div class="arrival-card reveal">
+                    <div class="arrival-badge">Estate Find</div>
+                    <div class="arrival-visual">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                    </div>
+                    <h3>Antique Kazak Rug 8x10</h3>
+                    <p class="arrival-vendor">Vendor: Oriental Rugs</p>
+                    <p>Hand-knotted Caucasian Kazak with bold geometric patterns. Natural dyes, excellent condition. Estate sale acquisition.</p>
+                    <span class="arrival-price">Estate priced</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 5. TREASURE HUNT GUIDE ===================== -->
+    <section class="hunt-section" id="hunt-guide">
+        <div class="container">
+            <span class="section-tag reveal">Your Adventure Starts Here</span>
+            <h2 class="section-heading reveal stagger-1">Treasure Hunt Guide</h2>
+            <p class="section-sub reveal stagger-2">Not sure where to start? Navigate our warehouse by era and style. Each section of the depot has its own character. Here's your map to the best finds.</p>
+
+            <div class="hunt-grid">
+                <div class="hunt-card reveal">
+                    <div class="hunt-era">1900s–1930s</div>
+                    <h3>The Craftsman Quarter</h3>
+                    <p>Arts & Crafts furniture, hammered copper, Stickley-era pieces, and bungalow-friendly decor. This is where you'll find original Gustav Stickley and Roycroft items that most shops only dream of carrying.</p>
+                    <span class="hunt-vendors">3 Vendors Specializing</span>
+                </div>
+                <div class="hunt-card reveal">
+                    <div class="hunt-era">1930s–1960s</div>
+                    <h3>Mid-Century Row</h3>
+                    <p>Danish modern, Eames-era, and Space Age design. Teak, walnut, and chrome as far as the eye can see. Our most popular section — arrive early for the best picks.</p>
+                    <span class="hunt-vendors">8 Vendors Specializing</span>
+                </div>
+                <div class="hunt-card reveal">
+                    <div class="hunt-era">1800s–1900s</div>
+                    <h3>Victorian Passage</h3>
+                    <p>Ornate furniture, stained glass, gilt mirrors, and formal elegance. If you're restoring a Victorian or love the dramatic, this is your corridor.</p>
+                    <span class="hunt-vendors">4 Vendors Specializing</span>
+                </div>
+                <div class="hunt-card reveal">
+                    <div class="hunt-era">1700s–1800s</div>
+                    <h3>Primitive Path</h3>
+                    <p>Early American, farmhouse, and rustic originals. Pewter, iron, hand-forged hardware, and the kind of patina that only centuries can create.</p>
+                    <span class="hunt-vendors">5 Vendors Specializing</span>
+                </div>
+                <div class="hunt-card reveal">
+                    <div class="hunt-era">1960s–1990s</div>
+                    <h3>Retro Alley</h3>
+                    <p>Vintage clothing, vinyl records, pop culture memorabilia, and retro electronics. Decades of style crammed into one groovy stretch.</p>
+                    <span class="hunt-vendors">6 Vendors Specializing</span>
+                </div>
+                <div class="hunt-card reveal">
+                    <div class="hunt-era">All Eras</div>
+                    <h3>Industrial Bay</h3>
+                    <p>Architectural salvage, factory carts, metal signage, and industrial lighting. The raw, the reclaimed, and the repurposed. Designers love this section.</p>
+                    <span class="hunt-vendors">4 Vendors Specializing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 6. DEALER SPOTLIGHT ===================== -->
+    <section class="dealer-section" id="dealers">
+        <div class="container">
+            <span class="section-tag reveal">Meet the Experts</span>
+            <h2 class="section-heading reveal stagger-1">Dealer Spotlight</h2>
+            <p class="section-sub reveal stagger-2">These aren't just sellers — they're obsessives. Every dealer at Antique Depot has spent years hunting, researching, and curating. Meet a few of the specialists who make the depot extraordinary.</p>
+
+            <div class="dealer-carousel" id="dealerCarousel">
+                <div class="dealer-card active reveal">
+                    <div class="dealer-avatar">MC</div>
+                    <h3>Mid-Century Mike</h3>
+                    <span class="dealer-specialty">Mid-Century Modern Specialist</span>
+                    <p>"I've been collecting Danish modern for 25 years. If it's teak, walnut, or chrome and it was made between 1950 and 1970, I know its story. My booth has items you won't find online because I source directly from estates. Come by and I'll walk you through the history of any piece."</p>
+                    <div class="dealer-booth">Booth 14-17</div>
+                </div>
+                <div class="dealer-card reveal">
+                    <div class="dealer-avatar">RB</div>
+                    <h3>Rug Baba</h3>
+                    <span class="dealer-specialty">Oriental Rugs & Textiles</span>
+                    <p>"Every rug has a story — the region, the weaver, the dye. I hand-pick each piece from collections across the world. A Kazak, a Tabriz, a Kilim — I can tell you the village it came from. My prices are fair because I buy smart, not because I cut corners."</p>
+                    <div class="dealer-booth">Booth 22-24</div>
+                </div>
+                <div class="dealer-card reveal">
+                    <div class="dealer-avatar">SM</div>
+                    <h3>Silvia's Closet</h3>
+                    <span class="dealer-specialty">Vintage Clothing & Jewelry</span>
+                    <p>"Fashion is circular. Everything comes back. I curate pieces that are wearable today — not just collectible. A 1940s peacoat, a 1970s maxi dress, a Bakelite bangle. These aren't costumes. They're style statements that outlast every trend."</p>
+                    <div class="dealer-booth">Booth 31-33</div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevDealer" aria-label="Previous dealer">&#8592;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-btn" id="nextDealer" aria-label="Next dealer">&#8594;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 7. COLLECTOR'S CORNER ===================== -->
+    <section class="collectors-section" id="collectors">
+        <div class="container">
+            <div class="collectors-grid">
+                <div class="collectors-content reveal">
+                    <span class="section-tag">Collector's Corner</span>
+                    <h2>Rare Finds for<br>Serious Collectors</h2>
+                    <p>Behind the main floor, past the warehouse aisles, there's a corner reserved for the serious collector. First editions.authenticated antiquities. One-of-a-kind pieces with provenance and paperwork. This isn't impulse shopping — this is investment-grade discovery.</p>
+                    <p>Our dealers maintain a private inventory for collectors who know exactly what they're looking for. Call ahead or ask any vendor — they'll connect you with pieces that never make it to the public floor.</p>
+                    <div class="collectors-features">
+                        <div class="collectors-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Authenticated Pieces</span>
                         </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Dozens of Independent Vendors</strong>
-                                <p>Each vendor brings their own expertise and eye for quality. That means better curation, more variety, and competitive pricing. Every booth is a different adventure.</p>
-                            </div>
+                        <div class="collectors-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                            <span>Provenance Documentation</span>
                         </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>New Arrivals Daily</strong>
-                                <p>Our vendors are always bringing in fresh inventory. Come back often because the best pieces go fast. Regular shoppers know the early bird gets the treasure.</p>
-                            </div>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Senior Discount Every Tuesday</strong>
-                                <p>We appreciate our senior customers with 10% OFF every Tuesday. It is our way of saying thank you for making Antique Depot part of your routine.</p>
-                            </div>
+                        <div class="collectors-feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Private Viewings Available</span>
                         </div>
                     </div>
                 </div>
-                <div class="why-us-visual">
-                    <div class="stats-card">
-                        <div class="stats-number" data-count="30">30+</div>
-                        <div class="stats-label">Independent Vendors</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number" data-count="8">8</div>
-                        <div class="stats-label">Specialty Categories</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number" data-count="5000">5,000+</div>
-                        <div class="stats-label">Items In Stock</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number">Daily</div>
-                        <div class="stats-label">New Arrivals</div>
+                <div class="collectors-visual reveal">
+                    <div class="rare-find-card">
+                        <div class="rare-find-label">Currently Available</div>
+                        <div class="rare-find-item">
+                            <h4>Georgian Silver Tea Service</h4>
+                            <p>c. 1780, London, with maker's mark. Fully hallmarked. Five pieces in original case.</p>
+                        </div>
+                        <div class="rare-find-divider"></div>
+                        <div class="rare-find-item">
+                            <h4>Art Nouveau Bronze Sculpture</h4>
+                            <p>Signed Chiparus, c. 1920. Cold-painted bronze on marble base. Authenticated.</p>
+                        </div>
+                        <div class="rare-find-divider"></div>
+                        <div class="rare-find-item">
+                            <h4>First Edition "The Great Gatsby"</h4>
+                            <p>1925, Scribner's. Original dust jacket. Near fine condition with minor restoration.</p>
+                        </div>
+                        <a href="tel:7145161731" class="btn btn-primary">Inquire About Rare Finds</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="reviews">
+    <!-- ===================== 8. MALL MAP ===================== -->
+    <section class="map-section" id="mall-map">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Customer Reviews</span>
-                <h2>Shoppers Love the<br>Antique Depot Experience</h2>
-                <p>Real reviews from treasure hunters who explore our vendor mall. See why people drive from across Orange County to shop at Antique Depot.</p>
+            <span class="section-tag reveal">Navigate the Depot</span>
+            <h2 class="section-heading reveal stagger-1">Mall Directory</h2>
+            <p class="section-sub reveal stagger-2">Our warehouse is organized into zones. Use this directory to plan your visit — or just wander and let the treasures find you.</p>
+
+            <div class="directory-grid reveal">
+                <div class="directory-zone">
+                    <div class="zone-letter">A</div>
+                    <h4>Entrance & Front Floor</h4>
+                    <p>Mid-Century Modern, Featured Vendors, New Arrivals</p>
+                </div>
+                <div class="directory-zone">
+                    <div class="zone-letter">B</div>
+                    <h4>East Wing</h4>
+                    <p>Primitive & Farmhouse, Oriental Rugs, Architectural Salvage</p>
+                </div>
+                <div class="directory-zone">
+                    <div class="zone-letter">C</div>
+                    <h4>West Wing</h4>
+                    <p>Vintage Clothing, Jewelry, Retro Electronics, Vinyl</p>
+                </div>
+                <div class="directory-zone">
+                    <div class="zone-letter">D</div>
+                    <h4>Back Warehouse</h4>
+                    <p>Antique Books, Maps, Fine Art, Collector's Corner</p>
+                </div>
+                <div class="directory-zone">
+                    <div class="zone-letter">E</div>
+                    <h4>Outdoor Yard</h4>
+                    <p>Garden Antiques, Statuary, Large Furniture, Fountains</p>
+                </div>
+                <div class="directory-zone">
+                    <div class="zone-letter">F</div>
+                    <h4>Second Floor</h4>
+                    <p>Home Decor, Kitchenware, Global Curiosities, Holiday</p>
+                </div>
             </div>
-            <div class="reviews-grid" id="reviewsGrid">
-                <div class="review-card">
+        </div>
+    </section>
+
+    <!-- ===================== 9. REVIEWS ===================== -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <span class="section-tag reveal">Shopper Stories</span>
+            <h2 class="section-heading reveal stagger-1">Treasure Hunters Speak</h2>
+            <p class="section-sub reveal stagger-2">Real reviews from real hunters. People who drove across Orange County and left with something they didn't know they needed — until they saw it.</p>
+
+            <div class="reviews-grid">
+                <div class="review-card reveal">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"This place is massive. I spent three hours here and still did not see everything. Every vendor has something different. I found an amazing Oriental rug and a vintage typewriter in the same visit. Unbeatable variety."</p>
+                    <p class="review-text">"This place is massive. I spent three hours here and still didn't see everything. Every vendor has something different. Found an amazing Oriental rug and a vintage typewriter in the same visit."</p>
                     <div class="review-author">
                         <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>Featured Review on Yelp</span>
-                        </div>
+                        <div><strong>Yelp Verified</strong><span>Featured Review</span></div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"The senior discount on Tuesdays is such a nice touch. My friends and I make it a weekly outing. The vendors are friendly, the prices are fair, and there is always something new to discover."</p>
+                    <p class="review-text">"The senior discount on Tuesdays is such a nice touch. My friends and I make it a weekly outing. The vendors are friendly, the prices are fair, and there's always something new."</p>
                     <div class="review-author">
                         <div class="review-avatar">P</div>
-                        <div>
-                            <strong>Patricia H.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
+                        <div><strong>Patricia H.</strong><span>Verified Customer</span></div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p class="review-text">"Best antique mall in Orange County, period. The architectural salvage section alone is worth the trip. I found original Craftsman-era hardware for my bungalow renovation at incredible prices."</p>
                     <div class="review-author">
                         <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>5-Star Review</span>
-                        </div>
+                        <div><strong>Yelp Verified</strong><span>5-Star Review</span></div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"I come here for the vintage clothing and I am never disappointed. The jewelry selection is fantastic too. Multiple vendors means multiple price points, so there is something for every budget."</p>
+                    <p class="review-text">"I come here for the vintage clothing and I'm never disappointed. The jewelry selection is fantastic too. Multiple vendors means multiple price points — something for every budget."</p>
                     <div class="review-author">
                         <div class="review-avatar">A</div>
-                        <div>
-                            <strong>Ashley R.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
+                        <div><strong>Ashley R.</strong><span>Verified Customer</span></div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"As a vendor at Antique Depot, I can say the management is great and the foot traffic is consistent. Shoppers here are serious about antiques and it shows. Wonderful community of buyers and sellers."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">D</div>
-                        <div>
-                            <strong>David M.</strong>
-                            <span>Vendor Review</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Found rare first edition books I have been searching for for years. The book vendor here has an incredible collection. Also picked up some beautiful vintage maps. This place is a goldmine."</p>
+                    <p class="review-text">"Found rare first edition books I've been searching for for years. The book vendor has an incredible collection. Also picked up some beautiful vintage maps. This place is a goldmine."</p>
                     <div class="review-author">
                         <div class="review-avatar">K</div>
-                        <div>
-                            <strong>Karen S.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
+                        <div><strong>Karen S.</strong><span>Verified Customer</span></div>
                     </div>
                 </div>
-            </div>
-            <div class="reviews-cta">
-                <p>Experience Orange's largest antique mall. Visit Antique Depot today.</p>
-                <a href="tel:7145161731" class="btn btn-primary">Call (714) 516-1731</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-tag">About Antique Depot</span>
-                    <h2>Where Every Visit Is<br>A New Adventure</h2>
-                    <p>Antique Depot is not just a shop. It is a destination. As Orange's largest antique mall, we bring together dozens of independent vendors under one roof, each with their own specialty, style, and pricing. That means you get the kind of variety and expertise that no single shop can match.</p>
-                    <p>Our vendors are passionate about what they do. They hunt, curate, and price their own inventory, which means every booth reflects a personal vision and deep knowledge. You will find everything from high-end furniture to quirky collectibles, all under one roof.</p>
-                    <p>Open every day of the week, Antique Depot makes it easy to shop on your schedule. And with new items arriving daily, there is always a reason to come back.</p>
-                    <div class="trust-badges">
-                        <span class="trust-badge">Largest Selection</span>
-                        <span class="trust-badge">Dozens of Vendors</span>
-                        <span class="trust-badge">New Arrivals Daily</span>
-                        <span class="trust-badge">Senior Tuesday Discount</span>
-                    </div>
-                </div>
-                <div class="about-details">
-                    <div class="detail-card">
-                        <h4>Multi-Vendor Advantage</h4>
-                        <p>With dozens of independent vendors, you get incredible variety and competitive pricing. Each vendor is an expert in their specialty, so you can shop with confidence.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4>Open 7 Days a Week</h4>
-                        <p>We are open every day, 10AM to 6PM. No matter your schedule, you can always find time to explore. Weekday visits mean smaller crowds and more time to browse.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4>Senior Tuesday Discount</h4>
-                        <p>Every Tuesday, seniors enjoy 10% OFF their purchases. It is our way of thanking the community that has supported us for years. Spread the word.</p>
+                <div class="review-card reveal">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"As a vendor at Antique Depot, I can say the management is great and the foot traffic is consistent. Shoppers here are serious about antiques. Wonderful community."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">D</div>
+                        <div><strong>David M.</strong><span>Vendor Review</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Thousands of Treasures Are Waiting.<br>Come Explore Today.</h2>
-                <p>With dozens of vendors and new arrivals daily, Antique Depot is always evolving. The perfect piece could be waiting for you right now. Do not let someone else take it home.</p>
-                <div class="cta-buttons">
-                    <a href="tel:7145161731" class="btn btn-primary btn-lg btn-pulse">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        Call: (714) 516-1731
-                    </a>
-                    <a href="#contact" class="btn btn-secondary btn-lg btn-pulse">Visit Us Today</a>
-                </div>
-                <p class="cta-note"><strong>10% OFF for seniors</strong> every Tuesday!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
+    <!-- ===================== 10. CONTACT ===================== -->
+    <section class="contact-section" id="contact">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-tag">Get In Touch</span>
-                    <h2>Come Explore the Depot</h2>
-                    <p>Walk-ins are always welcome. With dozens of vendors and thousands of items, you will want to give yourself plenty of time to browse. Wear comfortable shoes and bring your sense of adventure.</p>
+                <div class="contact-info reveal">
+                    <span class="section-tag">Come Explore</span>
+                    <h2>The Depot Is Open Daily</h2>
+                    <p>Walk-ins are always welcome. With 50+ vendors and thousands of items, give yourself plenty of time to browse. Wear comfortable shoes and bring your sense of adventure. The perfect piece is waiting.</p>
+
                     <div class="contact-details">
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                             <div>
                                 <strong>Phone</strong>
                                 <a href="tel:7145161731">(714) 516-1731</a>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             <div>
                                 <strong>Address</strong>
-                                <span>155 S Glassell St<br>Orange, CA 92866</span>
+                                <span>Glassell St<br>Orange, CA 92866</span>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                             <div>
                                 <strong>Hours</strong>
-                                <span>Open Daily: 10:00 AM - 6:00 PM</span>
+                                <span>Open Daily: 10:00 AM &ndash; 6:00 PM</span>
                             </div>
                         </div>
                     </div>
+
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.2!2d-117.8529!3d33.7868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd9a57488a3f3%3A0xfedcba!2s155+S+Glassell+St+Orange+CA!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Antique Depot Location"></iframe>
+                    </div>
                 </div>
-                <div class="contact-form-wrapper">
+
+                <div class="contact-form-wrapper reveal">
+                    <h3>Plan Your Visit</h3>
                     <form class="contact-form" id="contactForm">
-                        <h3>Plan Your Visit</h3>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
@@ -419,62 +581,60 @@
                             <input type="email" id="email" name="email" placeholder="jane@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="lookingfor">What Are You Looking For?</label>
-                            <textarea id="lookingfor" name="lookingfor" rows="3" placeholder="Tell us what antique pieces you are searching for..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="visitdate">Preferred Visit Date</label>
-                            <input type="date" id="visitdate" name="visitdate">
+                            <label for="lookingfor">What Are You Hunting For?</label>
+                            <textarea id="lookingfor" name="lookingfor" rows="3" placeholder="Tell us what antique pieces you're searching for..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">Send My Request</button>
-                        <p class="form-note">We will respond within 1 hour during business hours.</p>
+                        <p class="form-note">We'll respond within 1 hour during business hours.</p>
                     </form>
+                    <div class="form-success" id="formSuccess">
+                        <h4>Request Received!</h4>
+                        <p>We'll get back to you soon. In the meantime, come on in — we're open daily!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.2!2d-117.8529!3d33.7868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd9a57488a3f3%3A0xfedcba!2s155+S+Glassell+St+Orange+CA!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="350" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
+    <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <span class="logo-icon">AD</span>
+                        <div class="logo-mark">AD</div>
                         <div class="logo-text">
-                            <span class="logo-name">Antique Depot</span>
-                            <span class="logo-tagline">Dozens of Vendors. Endless Finds.</span>
+                            <span class="logo-name">ANTIQUE DEPOT</span>
+                            <span class="logo-sub">50+ DEALERS &bull; ENDLESS TREASURES</span>
                         </div>
                     </div>
-                    <p>Orange's largest antique mall with dozens of independent vendors. Open daily with new arrivals every day. Senior discount every Tuesday.</p>
+                    <p>Orange's largest antique mall with 50+ independent vendors. Open daily with new arrivals every day. Senior discount every Tuesday.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Explore</h4>
                     <ul>
-                        <li><a href="#collections">Our Collections</a></li>
-                        <li><a href="#why-us">Why Antique Depot</a></li>
+                        <li><a href="#vendors">Vendor Directory</a></li>
+                        <li><a href="#new-arrivals">New Arrivals</a></li>
+                        <li><a href="#hunt-guide">Treasure Hunt Guide</a></li>
+                        <li><a href="#collectors">Collector's Corner</a></li>
                         <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Visit Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Collections</h4>
+                    <h4>Categories</h4>
                     <ul>
-                        <li><a href="#collections">Mid-Century Modern</a></li>
-                        <li><a href="#collections">Primitive & Farmhouse</a></li>
-                        <li><a href="#collections">Vintage Clothing</a></li>
-                        <li><a href="#collections">Antique Books</a></li>
-                        <li><a href="#collections">Oriental Rugs</a></li>
+                        <li><a href="#vendors">Mid-Century Modern</a></li>
+                        <li><a href="#vendors">Primitive & Farmhouse</a></li>
+                        <li><a href="#vendors">Vintage Clothing</a></li>
+                        <li><a href="#vendors">Antique Books</a></li>
+                        <li><a href="#vendors">Oriental Rugs</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Contact Us</h4>
+                    <h4>Contact</h4>
                     <p><a href="tel:7145161731">(714) 516-1731</a></p>
-                    <p>155 S Glassell St<br>Orange, CA 92866</p>
-                    <p>Open Daily: 10AM - 6PM</p>
+                    <p>Glassell St<br>Orange, CA 92866</p>
+                    <p>Open Daily: 10AM &ndash; 6PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -483,13 +643,15 @@
         </div>
     </footer>
 
+    <!-- Mobile CTA -->
     <div class="mobile-cta" id="mobileCta">
         <a href="tel:7145161731" class="btn btn-primary btn-full">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            Visit Us Today: (714) 516-1731
+            Visit Us: (714) 516-1731
         </a>
     </div>
 
+    <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
 
     <script src="script.js"></script>

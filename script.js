@@ -1,67 +1,184 @@
-// Antique Depot - Interactive Scripts
+/* ================================================
+   ANTIQUE DEPOT — JavaScript
+   ================================================ */
 
-const mobileToggle = document.getElementById('mobileToggle');
-const navLinks = document.getElementById('navLinks');
-mobileToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); mobileToggle.classList.toggle('active'); });
-navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); mobileToggle.classList.remove('active'); }); });
+document.addEventListener('DOMContentLoaded', () => {
+    // ==================== SCROLL PROGRESS ====================
+    const scrollProgress = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = progress + '%';
+    });
 
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+    // ==================== NAVBAR SCROLL ====================
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+    // ==================== MOBILE MENU ====================
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-const scrollProgress = document.getElementById('scrollProgress');
-function updateScrollProgress() { const s = window.pageYOffset || document.documentElement.scrollTop; scrollProgress.style.width = (s / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100 + '%'; }
-window.addEventListener('scroll', updateScrollProgress);
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
 
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
-backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
 
-function animateCounter(el, target, dur) { const st = performance.now(); function up(ct) { const p = Math.min((ct - st) / dur, 1); const ep = 1 - Math.pow(1 - p, 3); el.textContent = (target >= 1000 ? Math.floor(ep * target).toLocaleString() : Math.floor(ep * target)) + '+'; if (p < 1) requestAnimationFrame(up); } requestAnimationFrame(up); }
-function fadeInEl(el) { el.style.opacity = '0'; el.style.transform = 'scale(0.5)'; el.style.transition = 'all 0.6s ease'; requestAnimationFrame(() => { el.style.opacity = '1'; el.style.transform = 'scale(1)'; }); }
+    // ==================== OPEN/CLOSED STATUS ====================
+    function updateStatus() {
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+        const time = hour + minute / 60;
+        // Open daily 10AM-6PM
+        const isOpen = time >= 10 && time < 18;
 
-const statsObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; const c = el.getAttribute('data-count'); if (c !== null) { const t = parseInt(c, 10); if (!isNaN(t) && t > 0) { el.classList.add('counting'); animateCounter(el, t, 2000); } else fadeInEl(el); } statsObserver.unobserve(el); } }); }, { threshold: 0.5 });
-document.querySelectorAll('.stats-number[data-count]').forEach(el => statsObserver.observe(el));
+        if (isOpen) {
+            statusDot.classList.add('open');
+            statusDot.classList.remove('closed');
+            statusText.textContent = 'Open Now';
+        } else {
+            statusDot.classList.add('closed');
+            statusDot.classList.remove('open');
+            statusText.textContent = 'Closed';
+        }
+    }
+    updateStatus();
+    setInterval(updateStatus, 60000);
 
-const obs = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { const p = entry.target.parentElement; const sibs = Array.from(p.children).filter(c => c.classList.contains('service-card') || c.classList.contains('review-card') || c.classList.contains('why-feature') || c.classList.contains('detail-card')); entry.target.style.animationDelay = (sibs.indexOf(entry.target) * 0.1) + 's'; entry.target.classList.add('animate-in'); obs.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.service-card, .review-card, .why-feature, .detail-card').forEach(el => { el.style.opacity = '0'; obs.observe(el); });
+    // ==================== VENDOR FILTERS ====================
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const vendorCards = document.querySelectorAll('.vendor-card');
 
-const heroContent = document.querySelector('.hero-content');
-window.addEventListener('scroll', () => { const s = window.pageYOffset; const h = document.querySelector('.hero').offsetHeight; if (s < h) heroContent.style.transform = `translateY(${s * 0.3}px)`; });
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
 
-(function() { const c = document.getElementById('heroParticles'); if (!c) return; for (let i = 0; i < 20; i++) { const p = document.createElement('div'); p.classList.add('hero-particle'); p.style.left = Math.random() * 100 + '%'; p.style.top = Math.random() * 100 + '%'; p.style.animationDelay = Math.random() * 4 + 's'; p.style.animationDuration = (3 + Math.random() * 3) + 's'; const sz = (4 + Math.random() * 6) + 'px'; p.style.width = sz; p.style.height = sz; c.appendChild(p); } })();
+            vendorCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                    card.style.display = '';
+                } else {
+                    card.classList.add('hidden');
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
 
-let asi = null;
-function startAS() { const g = document.getElementById('reviewsGrid'); if (!g || window.innerWidth >= 768) return; let d = 1; asi = setInterval(() => { const m = g.scrollWidth - g.clientWidth; if (g.scrollLeft >= m - 2) d = -1; else if (g.scrollLeft <= 2) d = 1; g.scrollLeft += d; }, 30); }
-function stopAS() { if (asi) { clearInterval(asi); asi = null; } }
-const rg = document.getElementById('reviewsGrid');
-if (rg) { rg.addEventListener('touchstart', stopAS); rg.addEventListener('touchend', () => { setTimeout(() => { if (window.innerWidth < 768) startAS(); }, 3000); }); }
-window.addEventListener('resize', () => { if (window.innerWidth < 768) { if (!asi) startAS(); } else stopAS(); }); if (window.innerWidth < 768) startAS();
+    // ==================== DEALER CAROUSEL ====================
+    const dealerCards = document.querySelectorAll('.dealer-card');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('prevDealer');
+    const nextBtn = document.getElementById('nextDealer');
+    let currentDealer = 0;
 
-const contactForm = document.getElementById('contactForm');
-const formFields = contactForm.querySelectorAll('input, select, textarea');
-formFields.forEach(f => { f.addEventListener('input', function() { const fg = this.closest('.form-group'); fg.classList.toggle('valid', this.value.trim().length > 0); }); f.addEventListener('blur', function() { if (this.hasAttribute('required') && !this.value.trim()) this.closest('.form-group').classList.remove('valid'); }); });
+    dealerCards.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToDealer(i));
+        dotsContainer.appendChild(dot);
+    });
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); const d = Object.fromEntries(new FormData(this).entries());
-    const subj = encodeURIComponent('Visit Request - Antique Depot');
-    const body = encodeURIComponent(`Name: ${d.name}\nPhone: ${d.phone || 'N/A'}\nEmail: ${d.email || 'N/A'}\nLooking For: ${d.lookingfor || 'N/A'}\nPreferred Visit Date: ${d.visitdate || 'N/A'}\n\nPlease contact me to confirm my visit.`);
-    window.location.href = `mailto:info@antiquedepot.com?subject=${subj}&body=${body}`;
-    const btn = this.querySelector('button[type="submit"]'); const ot = btn.innerHTML; btn.innerHTML = '&#10003; Request Sent!'; btn.style.background = '#10b981'; btn.style.borderColor = '#10b981';
-    setTimeout(() => { btn.innerHTML = ot; btn.style.background = ''; btn.style.borderColor = ''; this.reset(); formFields.forEach(f => f.closest('.form-group').classList.remove('valid')); }, 3000);
-});
+    function goToDealer(index) {
+        dealerCards[currentDealer].classList.remove('active');
+        dotsContainer.children[currentDealer].classList.remove('active');
+        currentDealer = index;
+        dealerCards[currentDealer].classList.add('active');
+        dotsContainer.children[currentDealer].classList.add('active');
+    }
 
-setTimeout(() => { document.querySelectorAll('.hero-ctas .btn').forEach(b => b.classList.add('btn-pulse')); }, 3000);
+    prevBtn.addEventListener('click', () => {
+        goToDealer((currentDealer - 1 + dealerCards.length) % dealerCards.length);
+    });
 
-const sections = document.querySelectorAll('section[id]'); const navList = document.querySelectorAll('.nav-links a[data-section]');
-function updateNav() { const sp = window.scrollY + 120; sections.forEach(s => { const t = s.offsetTop; const h = s.offsetHeight; const id = s.id; if (sp >= t && sp < t + h) navList.forEach(l => { l.classList.toggle('active-section', l.getAttribute('data-section') === id); }); }); }
-window.addEventListener('scroll', updateNav); updateNav();
+    nextBtn.addEventListener('click', () => {
+        goToDealer((currentDealer + 1) % dealerCards.length);
+    });
 
-document.querySelectorAll('a[href^="tel:"]').forEach(l => l.addEventListener('click', () => { if (typeof gtag === 'function') gtag('event', 'click_to_call', { business: 'Antique Depot' }); }));
+    // Auto-advance
+    setInterval(() => {
+        goToDealer((currentDealer + 1) % dealerCards.length);
+    }, 6000);
 
-window.addEventListener('load', () => {
-    ['.hero-badge', '.hero h1', '.hero-sub', '.hero-ctas', '.hero-trust'].forEach((sel, i) => {
-        const el = document.querySelector(sel); if (el) { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; setTimeout(() => { el.style.transition = 'all 0.6s ease'; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 200 + i * 200); }
-    }); updateScrollProgress();
+    // ==================== SCROLL REVEAL ====================
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ==================== BACK TO TOP ====================
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ==================== FORM VALIDATION ====================
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            const nameInput = document.getElementById('name');
+            if (!nameInput.value.trim()) {
+                nameInput.classList.add('error');
+                valid = false;
+            } else {
+                nameInput.classList.remove('error');
+            }
+
+            const emailInput = document.getElementById('email');
+            if (emailInput.value && !emailInput.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                emailInput.classList.add('error');
+                valid = false;
+            } else {
+                emailInput.classList.remove('error');
+            }
+
+            if (valid) {
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            }
+        });
+    }
+
+    // ==================== SMOOTH SCROLL ====================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 });
